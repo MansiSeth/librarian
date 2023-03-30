@@ -36,7 +36,7 @@ export default {
     mounted() {
             console.log("In mounted");
             this.init()
-            //this is a lifecycle method that calls init method everytime the page is rendered
+            //this is a lifecycle hook that calls init method everytime the page is rendered
         },
     methods: {
         init() {
