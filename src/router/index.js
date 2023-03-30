@@ -28,7 +28,7 @@ const routes = [
     component: books
   },
   {
-    path: '/books/:id',
+    path: '/books/:id', //this points to bookEdit not book
     name: 'booksEdit',
     component: bookEdit
   }
