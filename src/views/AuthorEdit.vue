@@ -2,12 +2,32 @@
 <div>
 
     <h1>AuthorEdit is rendering</h1>
-    <!-- <p>current id = {{authors._id}}</p> -->
+    <p>current id = {{id}}</p>
+
+
+
+
+    <v-row >
+        <v-col cols="10" offset="1" sm="8" offset-sm="2" md="6" offset-md="3">
+        <v-form>
+            <v-text-field label="Code" v-model="author._id" ></v-text-field>
+            <v-text-field label="Name" v-model="author.name"></v-text-field>
+
+        </v-form>
+        </v-col>
+
+        <div class="text-right">
+            <v-btn>Save</v-btn>
+            <v-btn>Cancel</v-btn>
+        </div>
+    </v-row>
 
 </div>
 </template>
 
 <script>
+
+import authorList from '@/data/authors.json'
 export default {
     data() {
         return {

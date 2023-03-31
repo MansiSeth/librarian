@@ -42,8 +42,10 @@ export default {
 
     methods: {
         searchInAuthors(searchitem) {
+            
             if (searchitem) {
-                this.author = AuthorData.filter(rec => rec.name.toLowerCase()).includes(searchitem.toLowerCase())
+                this.author = AuthorData.filter(rec => rec.name.toLowerCase().includes(searchitem.toLowerCase()))
+                
             }
 
         }
