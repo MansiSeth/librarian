@@ -22,6 +22,16 @@ const routes = [
     path: '/books/:id', //this points to bookEdit not book
     name: 'booksEdit',
     component: bookEdit
+  },
+  {
+    path: '/authors', //this points to bookEdit not book
+    name: 'authors',
+    component: ()=>import('../views/Authors.vue')
+  },
+  {
+    path: '/authors/:id', //this points to bookEdit not book
+    name: 'authorsEdit',
+    component: ()=>import('../views/AuthorEdit.vue')
   }
 ]
 

@@ -76,16 +76,27 @@
 import booksList from "@/data/books.json";
 import AppHeader from '@/views/AppHeader.vue';
 
+import axios from 'axios'; // library used for integrating the APIs
+
 export default {
     components: { AppHeader },
     data() {
         return {
-            books: booksList, //initializing a variable called books to bookList which is the imported books from the json file
+            books: [], //initializing a variable called books to bookList which is the imported books from the json file
 
         };
     },
 
     methods: {
+
+
+        async init(){
+            let response = await axios.get('http://localhost:3000/api/books') //get link from postman
+            this.books = response.data
+        },// this function is writen to enable getting the data from the servers using get method
+
+
+
         searchInBooks(searchtext) {
             if (searchtext) {
                 this.books = booksList.filter(rec => rec.title.toLowerCase().includes(searchtext.toLowerCase()))
@@ -95,6 +106,12 @@ export default {
             // We use filter method it's param is the records (rec) in json file that are converted to lower case. Then includes method is used whose param is searchtext in lowercase
         }
 
+    },
+
+
+    mounted () {
+        this.init()
+    
     }
 };
 </script>
